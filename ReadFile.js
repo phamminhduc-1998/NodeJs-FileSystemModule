@@ -8,8 +8,8 @@ var server = http.createServer(function (req, res) { //tạo server nhận reque
     console.log(req.url);
     fs.readFile("a.html", function (err, data) {
         if (err) throw err;
-        res.writeHead(200, { 'Content-Type': 'text.html' });//gởi “header data” cho client
-        res.write(data.toString('utf8'));//in noi dung ra html
+        res.writeHead(200, { 'Content-Type': 'text/html' });//gởi “header data” cho client
+        res.write(data);//in noi dung ra html
         return res.end();//kết thúc ghi 
     });
 });
